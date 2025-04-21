@@ -38,17 +38,19 @@ export const CategoriesSidebar = ({
       setSelectedCategory(category);
     } else {
       // this is a leaf category (no subgcategories)
-      if (parentCategories && selectedCategory) {
-        //this is a subcategory - navigate to /category/subcategory
-        router.push(`/${selectedCategory.slug}/${category.slug}`);
-      } else {
-        //this is a main category - navigate to /category
-        if (category.slug === "all") {
-          router.push("/");
-        } else {
-          router.push(`/${category.slug}`);
-        }
-      }
+if (parentCategories && selectedCategory) {
+  // this is a subcategory - navigate to /category/subcategory
+  router.push(
+    `/${encodeURIComponent(selectedCategory.slug)}/${encodeURIComponent(category.slug)}`
+  );
+} else {
+  // this is a main category - navigate to /category
+  if (category.slug === "all") {
+    router.push("/");
+  } else {
+    router.push(`/${encodeURIComponent(category.slug)}`);
+  }
+}
 
       handleOpenChange(false)
     }
