@@ -20,7 +20,7 @@ export const Categories = ({ data }: Props) => {
   const viewAllRef = useRef<HTMLDivElement>(null);
 
   const [visibleCount, setVisibleCount] = useState(data.length);
-  const [isAnyHovered, setIsAnyHoreved] = useState(false);
+  const [isAnyHovered, setIsAnyHovered] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const activeCategory = "all";
