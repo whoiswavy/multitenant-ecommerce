@@ -83,8 +83,8 @@ export const Categories = ({ data }: Props) => {
       <div
         ref={containerRef}
         className="flex flex-nowrap items-center"
-        onMouseEnter={() => setIsAnyHoreved(true)}
-        onMouseLeave={() => setIsAnyHoreved(false)}
+        onMouseEnter={() => setIsAnyHovered(true)}
+        onMouseLeave={() => setIsAnyHovered(false)}
       >
         {data.slice(0, visibleCount).map((category) => (
           <div key={category.id}>
